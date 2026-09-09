@@ -508,3 +508,15 @@ body:has(.workout-list) {
     background-position: center;
     background-repeat: no-repeat;
 }
+@media (max-width: 768px) {
+
+    .home-background,
+    .workouts-background,
+    .exercises-background,
+    .bmi-background,
+    .about-background {
+        background-position: center top;
+        background-size: cover;
+    }
+
+}
