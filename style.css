@@ -58,8 +58,13 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     padding: 60px 20px;
-    background-repeat: no-repeat;
     color: lightblue;
+
+    background-image: url("home-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000;
 }
 
 .hero-content {
@@ -100,6 +105,7 @@ nav a:hover {
 .features {
     padding: 60px 20px;
     text-align: center;
+    background: #000;
 }
 
 .features h2 {
@@ -473,12 +479,12 @@ button:hover {
     }
 }
 .home-background {
-    background-image: url("./home-bg.jpg");
+    background-image: url("home-bg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-body:has(.workout-list) {
+.workouts-background {
     background-image: url("workout-bg.jpg");
     background-size: cover;
     background-position: center;
@@ -510,6 +516,12 @@ body:has(.workout-list) {
 }
 @media (max-width: 768px) {
 
+     .home-background {
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
     .home-background,
     .workouts-background,
     .exercises-background,
@@ -517,6 +529,163 @@ body:has(.workout-list) {
     .about-background {
         background-position: center top;
         background-size: cover;
+    }
+
+}.workout-plan {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.exercise-row {
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    padding: 25px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.exercise-row h2 {
+    margin-bottom: 8px;
+}
+
+.exercise-row p {
+    color: white;
+}
+
+.rest-button {
+    display: block;
+    margin: 25px auto;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    background: #00c853;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#rest-timer {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+.workout-plan {
+    background: #f5f5f5;
+    border-radius: 15px;
+}
+
+/* Workout Detail Pages - Dark Background */
+body:has(.workout-plan) {
+    background: #121212;
+    color: white;
+}
+
+.workout-plan {
+    background: transparent;
+}
+
+.exercise-row {
+    background: #1e1e1e;
+    color: white;
+}
+
+.exercise-row h2,
+.exercise-row p {
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    /* Header */
+    header {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    /* Page Titles */
+    .page-title {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .page-title h1 {
+        font-size: 30px;
+    }
+
+    .page-title p {
+        font-size: 16px;
+    }
+
+    /* Cards */
+    .feature-container,
+    .workout-list,
+    .exercise-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .workout-card,
+    .exercise-card {
+        width: auto;
+        min-height: auto;
+        padding: 25px 20px;
+    }
+
+    /* Workout / Exercise detail pages */
+    .workout-plan {
+        width: auto;
+        margin: 20px 15px;
+        padding: 10px;
+    }
+
+    .exercise-row {
+        padding: 20px 15px;
+    }
+
+    .exercise-row h2 {
+        font-size: 20px;
+    }
+
+    /* Home Hero */
+    .hero {
+        min-height: 70vh;
+        padding: 30px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 30px 20px;
+        text-align: center;
     }
 
 }

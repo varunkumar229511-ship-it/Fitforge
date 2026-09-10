@@ -55,3 +55,37 @@ if (menuButton) {
         nav.classList.toggle("show-menu");
     });
 }
+
+let restTimerInterval;
+
+function startRestTimer() {
+    let time = 60;
+
+    const timer = document.getElementById("rest-timer");
+    timer.textContent = time;
+
+    clearInterval(restTimerInterval);
+
+    restTimerInterval = setInterval(function () {
+        time--;
+        timer.textContent = time;
+
+        if (time <= 0) {
+            clearInterval(restTimerInterval);
+
+            // Beep sound
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+
+            oscillator.frequency.value = 800;
+            oscillator.connect(audioContext.destination);
+            oscillator.start();
+
+            setTimeout(function () {
+                oscillator.stop();
+            }, 500);
+
+            alert("⏱️ Rest complete! Get ready for the next exercise.");
+        }
+    }, 1000);
+}
